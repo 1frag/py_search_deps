@@ -32,6 +32,7 @@ def remove_type_checking(text: str):
         it = chain(text.split('\n'), [None])
         while (line := next(it)) is not None:
             if line == 'if TYPE_CHECKING:':
+                yield from [line, '    pass']
                 while (line := next(it)) is not None:
                     if line and line[0] != ' ':
                         yield line

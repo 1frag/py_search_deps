@@ -96,7 +96,7 @@ class PySearchDeps:
 
     def get_uses(
             self,
-            *dirs: Tuple[Path, ...],
+            *dirs: Path,
             target: Tuple[ItemKind, ...] = (ItemKind.THIRD_PARTY,),
     ) -> Dict[Path, Set[str]]:
         data = {}
